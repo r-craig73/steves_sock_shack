@@ -1,5 +1,10 @@
 <div class="panel">
-  TBD
+  <% if object.errors.any? %>
+    <h3>Oops, there's a hole in my sock.  Please fix these errors:</h3>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
 </div>
-
-<%= render "layouts/errors", :object => @product %>
