@@ -1,20 +1,18 @@
-<h1>Welcome to Steve's Sock Shack</h1>
+<h1>Welcome to Steve's Sock Shack!</h1>
 
-<h3>In 2015, Steve G. wanted to create a store where people can express there feelings...through socks.</h3>
-<h3>The more stylish and silly the sock, the better!</h3>
+<h2>In 2015, Steve G. wanted to create a store where people can express thier feelings and creativity...through socks.</h2>
+<h2>The more stylish and sillier the sock, the better!</h2>
+<hr>
+<p><%= link_to "Add a New Sock", new_product_path %></p>
 <hr>
 
-<p>Click here to view all of our socks.</p>
-<p><%= link_to "Add a new sock", new_product_path %></p>
-<hr>
-
-<% if @product != nil %>
-<h3>Here's a list of stylish socks</h3>
-<% @product.each do |product| %>
-  <p><%= product.name %></p>
+<% if @products != nil %>
+<h3>Here's a list of our socks!</h3>
+<% @products.each do |product| %>
+  <h3><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h3>
   <% end %>
   <% else %>
-  <p>No products...yet</p>
+  <h2>No socks...yet</h2>
 <% end %>
 <hr>
 
@@ -22,9 +20,4 @@
 
 
 
-
-
-
-
-
-<p>If your sock game is wack, then go Steve's Sock Shack!</p>
+<p>If your sock game is wack, then go to Steve's Sock Shack!</p>
