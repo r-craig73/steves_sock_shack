@@ -1,0 +1,26 @@
+<h1>Add a New Sock</h1>
+
+<% if @product.errors.any? %>
+  <h3>Oops, there's a hole in my sock.  Please try again?</h3>
+  <ul>
+    <% @product.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  </ul>
+  <% end %>
+<% end %>
+
+<%= form_for @product do |f| %>
+  <%= f.label :name, "Sock's name"%>
+  <%= f.text_field :name %>
+  <%= f.label :cost %>
+  <%= f.number_field :cost %>
+  <hr>
+  <%= f.label :country_of_origin, "Made in which country" %>
+  <%= f.text_field :country_of_origin %>
+  <hr>
+  <%= f.label :featured, "Featured" %>
+  <%= f.radio_button :featured, true %>
+  <%= f.label :notfeatured, "Not Featured" %>
+  <%= f.radio_button :featured, false %>
+  <%= f.submit "Add sock"%>
+<% end %>

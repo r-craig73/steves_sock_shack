@@ -1,0 +1,30 @@
+<h1>Welcome to Steve's Sock Shack</h1>
+
+<h3>In 2015, Steve G. wanted to create a store where people can express there feelings...through socks.</h3>
+<h3>The more stylish and silly the sock, the better!</h3>
+<hr>
+
+<p>Click here to view all of our socks.</p>
+<p><%= link_to "Add a new sock", new_product_path %></p>
+<hr>
+
+<% if @product != nil %>
+<h3>Here's a list of stylish socks</h3>
+<% @product.each do |product| %>
+  <p><%= product.name %></p>
+  <% end %>
+  <% else %>
+  <p>No products...yet</p>
+<% end %>
+<hr>
+
+
+
+
+
+
+
+
+
+
+<p>If your sock game is wack, then go Steve's Sock Shack!</p>
