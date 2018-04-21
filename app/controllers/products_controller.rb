@@ -3,12 +3,11 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @usaproducts = Product.usa_product
-    render :index
+    @latestproducts = Product.three_latest_product
   end
 
   def new
     @product = Product.new
-    render :new
   end
 
   def create
@@ -16,8 +15,8 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:notice] = "Your sock is added to the list"
       redirect_to products_path
-    else
-      render :new
+    # else
+    #   render :new
     end
   end
 
@@ -28,7 +27,6 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    render :edit
   end
 
   def update
