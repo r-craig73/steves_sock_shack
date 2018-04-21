@@ -3,11 +3,11 @@
 <h2>In 2015, Steve G. fullfilled his dream creating an online store where people can express thier feelings and creativity...through socks!</h2>
 <h2>The more stylish and sillier the sock, the better!</h2>
 <hr>
-<p>Admin: <%= link_to "Add a New Sock", new_product_path %></p>
+<h5>Admin: <%= link_to "Add a New Sock", new_product_path %></h5>
 <hr>
 
 <% if @usaproducts != nil %>
-<h3>Shop local! Here's a list of socks proudly made in the USA!</h3>
+<h3>Shop local! Here's a list of socks proudly made in the USA!*</h3>
   <% @usaproducts.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
     <% end %>
@@ -17,7 +17,7 @@
 <hr>
 
 <% if @latestproducts != nil %>
-  <h3>Just deliverd! Here are the latest socks available...</h3>
+  <h3>Fresh from our warehouse! The latest socks available...*</h3>
   <% @latestproducts.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
     <% end %>
@@ -27,13 +27,20 @@
 <hr>
 
 <% if @products != nil %>
-  <h3>Here's a list of our available socks!</h3>
-    <% @products.each do |product| %>
-      <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
+  <div class="container">
+  <h3>Here's a list of our available socks!*</h3>
+    <% @products.each_slice(4) do |products| %>
+    <div class="row">
+      <% products.each do |product| %>
+        <div class="col-md-3"><h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4></div>
+      <% end %>
+    </div>
     <% end %>
+  </div>
 <% else %>
   <h2>No socks...yet</h2>
 <% end %>
 <hr>
-
+<h5>* per pair</h5>
+<hr>
 <p>If your sock game is wack, go to Steve's Sock Shack!</p>

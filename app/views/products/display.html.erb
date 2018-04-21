@@ -1,5 +1,5 @@
 <h3>Sock's name: <%= @product.name %></h3>
-<p>Cost: <%= @product.cost %></p>
+<p>Cost: $ <%= @product.cost %></p>
 <p>Country of Origin: <%= @product.country_of_origin %></p>
 <p>Featured Sock: <%= @product.featured %></p>
 <p><%= link_to "Edit Sock", edit_product_path(@product) %> | <%= link_to "Delete Sock", product_path, :data => {

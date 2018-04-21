@@ -5,7 +5,7 @@ country_list = ["China", "Japan", "China", "China", "United States of America", 
 
 50.times do |i|
   @name = Faker::Color.color_name
-  @cost = Faker::Number.decimal(2, 2)
+  @cost = Faker::Number.decimal(1, 2)
   country_list[i]
   @featured = Faker::Boolean.boolean(0.2)
   @created_at = Faker::Time.backward(14, :all)
