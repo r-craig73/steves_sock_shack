@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @usaproducts = Product.usa_product
     render :index
   end
 
