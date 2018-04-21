@@ -3,11 +3,11 @@
 <h2>In 2015, Steve G. fullfilled his dream creating an online store where people can express thier feelings and creativity...through socks!</h2>
 <h2>The more stylish and sillier the sock, the better!</h2>
 <hr>
-<p><%= link_to "Add a New Sock", new_product_path %></p>
+<p>Admin: <%= link_to "Add a New Sock", new_product_path %></p>
 <hr>
 
 <% if @usaproducts != nil %>
-<h3>Shop local! Here's a list of socks proudly made in the USA</h3>
+<h3>Shop local! Here's a list of socks proudly made in the USA!</h3>
   <% @usaproducts.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
     <% end %>
@@ -17,7 +17,7 @@
 <hr>
 
 <% if @latestproducts != nil %>
-  <h3>Here are the latest socks available</h3>
+  <h3>Just deliverd! Here are the latest socks available...</h3>
   <% @latestproducts.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
     <% end %>
