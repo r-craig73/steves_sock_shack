@@ -16,6 +16,8 @@ class ProductsController < ApplicationController
     if @product.save
       flash[:notice] = "Your sock is added to the list"
       redirect_to products_path
+    else
+      render :new
     end
   end
 
