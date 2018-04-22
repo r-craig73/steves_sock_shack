@@ -13,13 +13,18 @@ arrested_development_quotes = "It's a hug, Michael. I'm hugging you. No! I was a
   @created_at = Faker::Time.backward(14, :all)
   Product.create!(name: @name, cost: @cost, country_of_origin: country_list[i], featured: @featured, created_at: @created_at)
   @product_id = Product.last.id
-  # 50.times do |i|
-  #   @rating = Faker::Number.between(1, 5)
-  #   random_number = Faker::Number.between(50, 250)
-  #   @content_body = arrested_development_quotes[0..random_number]
-  #   Review.create!(author: Faker::RuPaul.queen, rating: @rating, content_body: @content_body, created_at: @created_at)
-  #   @review_id = Review.last.id
-  # end
+  250.times do |i|
+    @author = Faker::RuPaul.queen
+    @rating = Faker::Number.between(1, 5)
+    @review_id = Review.last.id
+    if i = 0
+      random_number = Faker::Number.between(50, 250)
+      @content_body = arrested_development_quotes[0..random_number]
+      Review.create!(author: Faker::RuPaul.queen, rating: @rating, content_body: @content_body, created_at: @created_at)
+
+    end
+    @review_id = Review.last.id
+  end
 end
 
 
