@@ -2,5 +2,10 @@
 @import "bootstrap";
 
 h1, h2, h3, h4, p {
-  text-align: center
-};
+  text-align: center;
+}
+
+h5 {
+  text-align: left;
+  padding-left: 15px;
+}
