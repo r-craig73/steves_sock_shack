@@ -1,6 +1,7 @@
 # README
 
 ## steves_sock_shack (Steve's Sock Shack)
+#### 04/20/2018-04/22/2018
 
 ### by Ron Craig (ron.craig@comcast.net)
 ### GitHub repository: https://github.com/r-craig73/steves_sock_shack
@@ -8,7 +9,10 @@
 ## Description
 ### A project creating a website for Steve's Sock Shack.  The website uses Ruby on rails to handle products and customer's reviews.
 
-## Application instructions (assuming Mac OS)
+### Sample Home Page
+<kbd><img src="./app/assets/images/steve_sock_shack_homepage.png" alt="Steve's Sock Shack, partial screenshot"></kbd>
+
+### Application instructions (assuming Mac OS)
 * If you want to use Postgres for the database and not to install Rail's testing tools, create a file called `.railsrc` in your home directory (using the text editor of your choice) and add the line `-d postgresql -T`
 
 * Clone the repository and direct your terminal into the home repository folder `Computer:steves_sock_shack user$`
