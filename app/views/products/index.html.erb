@@ -2,19 +2,20 @@
 
 <h2>In 2015, Steve G. fullfilled his dream creating an online store where people can express thier feelings and creativity...through socks!</h2>
 <h2>The more stylish and sillier the sock, the better!</h2>
+<h3>Steve G. "If your sock game is wack, go to Steve's Sock Shack!"</h3>
 <hr>
 <h5>Admin: <%= link_to "Add a New Sock", new_product_path %></h5>
 <hr>
 
-<% if @usaproducts != nil %>
-<h3>Shop local! Here's a list of socks proudly made in the USA!*</h3>
-  <% @usaproducts.each do |product| %>
+<% if @mostreviews.any? %>
+  <h3>Here's our most reviewed socks! The socks talk is located below!</h3>
+  <% @mostreviews.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
-    <% end %>
-  <% else %>
-    <h4>No USA products...yet</h4>
   <% end %>
-  <h5>* per pair</h5>
+<% else %>
+  <h4>The most reviewed socks are coming soon!</h4>
+<% end %>
+<h5>* per pair</h5>
 <hr>
 
 <% if @latestproducts != nil %>
@@ -22,10 +23,22 @@
   <% @latestproducts.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
     <% end %>
-  <% else %>
+<% else %>
     <h4>New socks are arriving soon!</h4>
-  <% end %>
-  <h5>* per pair</h5>
+<% end %>
+<h5>* per pair</h5>
+<hr>
+
+<% if @usaproducts != nil %>
+<h3>Shop local! Here's a list of socks proudly made in the USA!*</h3>
+  <% @usaproducts.each do |product| %>
+    <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
+    <% end %>
+<% else %>
+    <h4>No USA products...yet</h4>
+<% end %>
+<h5>* per pair</h5>
+<hr>
 <hr>
 
 <% if @products != nil %>
@@ -42,7 +55,6 @@
 <% else %>
   <h2>No socks...yet</h2>
 <% end %>
-<hr>
 <h5>* per pair</h5>
 <hr>
 <p>If your sock game is wack, go to Steve's Sock Shack!</p>

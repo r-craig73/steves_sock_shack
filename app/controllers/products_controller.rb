@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @usaproducts = Product.usa_product
     @latestproducts = Product.three_latest_product
+    @mostreviews = Product.most_reviews
   end
 
   def new
@@ -22,7 +23,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     review_id = @product.review_id
     @reviews = @product.reviews
-    
+
     render :display
   end
 
