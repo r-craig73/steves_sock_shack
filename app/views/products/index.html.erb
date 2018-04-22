@@ -8,7 +8,7 @@
 <hr>
 
 <% if @mostreviews.any? %>
-  <h3>Here's our most reviewed socks! Check out the 'sock talk' in the links below!</h3>
+  <h3>Here's our the TOP 10 reviewed socks! Check out the 'sock talk' in the links below!</h3>
   <% @mostreviews.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
   <% end %>
