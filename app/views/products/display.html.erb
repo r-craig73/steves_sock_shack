@@ -11,8 +11,11 @@
   <% if @product.reviews.any? %>
   <ul>
   <% @reviews.each do |review| %>
-      <li><%= review.content_body %></li>
-    <% end %>
+    <h5><%= review.author %></h5>
+    <li><%= review.content_body %></li>
+    <li><%= review.rating %> out of 5 stars</li>
+    <br>
+  <% end %>
   </ul>
   <% else %>
   <p>There are no reviews...yet!</p>
