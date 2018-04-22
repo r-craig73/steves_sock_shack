@@ -7,8 +7,8 @@ describe "the review process" do
     visit product_url(product)
     click_on 'Add a Review'
     fill_in 'Author', :with => 'Bob K.'
-    # fill_in 'Review', :with => 'xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx'
-    # select 4, from: 'Rating'
+    fill_in 'Review', :with => 'xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx'
+    select 4, from: 'Rating'
     click_on 'Add Review'
     expect(page).to have_content 'Thank you for your review.'
   end
