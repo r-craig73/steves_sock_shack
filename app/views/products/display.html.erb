@@ -2,7 +2,7 @@
 <p>Cost: $ <%= @product.cost %></p>
 <p>Country of Origin: <%= @product.country_of_origin %></p>
 <p>Featured Sock: <%= @product.featured %></p>
-<p><%= link_to "Edit Sock", edit_product_path(@product) %> | <%= link_to "Delete Sock", product_path, :data => {
+<p>Admin: <%= link_to "Edit Sock", edit_product_path(@product) %> | <%= link_to "Delete Sock", product_path, :data => {
       :confirm => "You sure?", :method => "delete"
     } %></p>
 <hr>

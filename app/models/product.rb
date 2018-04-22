@@ -6,5 +6,9 @@ class Product < ActiveRecord::Base
   scope :usa_product, -> { where("country_of_origin =?", "United States of America")}
   scope :three_latest_product, -> { order(created_at: :desc).limit(3)}
 
+  scope :most_reviews, -> {
+    
+  }
+
 
 end
