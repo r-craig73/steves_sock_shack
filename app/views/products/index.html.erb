@@ -11,7 +11,7 @@
 <hr>
 
 <% if @mostreviews.any? %>
-  <h3>Here's our the TOP 10 reviewed socks! Check out the 'sock talk' in the links below!</h3>
+  <h3>Here's the TOP 10 reviewed socks! Check out the 'sock talk' in the links below! *</h3>
   <% @mostreviews.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
   <% end %>
@@ -22,7 +22,7 @@
 <hr>
 
 <% if @latestproducts != nil %>
-  <h3>Fresh from our warehouse! The latest socks available...*</h3>
+  <h3>Fresh from our warehouse! The latest socks available... *</h3>
   <% @latestproducts.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
     <% end %>
@@ -33,7 +33,7 @@
 <hr>
 
 <% if @usaproducts != nil %>
-<h3>Shop local! Here's a list of socks proudly made in the USA!*</h3>
+<h3>Shop local! Here's a list of socks proudly made in the USA! *</h3>
   <% @usaproducts.each do |product| %>
     <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
     <% end %>
@@ -45,7 +45,7 @@
 
 <% if @products != nil %>
   <div class="container">
-  <h3>Here's a list of our available socks!*</h3>
+  <h3>Here's a list of our available socks! *</h3>
     <% @products.each_slice(4) do |products| %>
     <div class="row">
       <% products.each do |product| %>
