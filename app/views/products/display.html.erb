@@ -6,4 +6,18 @@
       :confirm => "You sure?", :method => "delete"
     } %></p>
 <hr>
+
+<h3>Reviews</h3>
+  <% if @product.reviews.any? %>
+  <ul>
+  <% @reviews.each do |review| %>
+      <li><%= review.content_body %></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>There are no reviews...yet!</p>
+  <p><%= link_to "Add a Review", new_product_review_path(@product)  %></p>
+<% end %>
+<hr>
+
 <h4><%= link_to "Go Home", products_path %></h4>
