@@ -5,16 +5,16 @@ describe "the add a product process" do
     visit products_path
     click_link 'Add a New Sock'
     fill_in('Sock name', :with => 'BLUE sock')
-    #fill_in 'Cost', :with => '4.25'
+    fill_in 'Cost', :with => '4.25'
     fill_in 'Made in which country', :with => 'Japan'
-    # choose('Not Featured')
+    # choose('Not Featured')  # radio button is challenging to test
     click_on 'Add Sock'
     expect(page).to have_content 'Your sock is added to the list'
   end
 
   it "gives error when no name is entered" do
     visit products_path
-    #click_link 'Add a New Sock'
+    click_link 'Add a New Sock'
     fill_in 'Cost', :with => '4.25'
     click_on 'Add Sock'
     expect(page).to have_content 'errors'
@@ -22,7 +22,7 @@ describe "the add a product process" do
 
   it "gives error when no cost is entered" do
     visit products_path
-    #click_link 'Add a New Sock'
+    click_link 'Add a New Sock'
     fill_in('Sock name', :with => 'BLUE sock')
     click_on 'Add Sock'
     expect(page).to have_content 'errors'
