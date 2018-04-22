@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
-    .limit(12)
+    .limit(10)
   )}
 
 
