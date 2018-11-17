@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def index
     @products = Product.all
     @usaproducts = Product.usa_product
@@ -14,7 +13,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:notice] = "Your sock is added to the list"
+      flash[:notice] = 'Your sock is added to the list'
       redirect_to products_path
     else
       render :new
@@ -25,7 +24,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     review_id = @product.review_id
     @reviews = @product.reviews
-
     render :display
   end
 
@@ -35,20 +33,20 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-      if @product.update(product_params)
-        flash[:notice] = "Your sock is updated"
-        redirect_to products_path
-      else
-        render :edit
-      end
+    if @product.update(product_params)
+      flash[:notice] = 'Your sock is updated'
+      redirect_to products_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-      flash[:notice] = "The sock is removed"
-      redirect_to products_path
-    end
+    flash[:notice] = 'The sock is removed'
+    redirect_to products_path
+  end
 
 private
   def product_params
