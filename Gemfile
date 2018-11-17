@@ -13,6 +13,8 @@ gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7' #BOOTSTRAP
+
+# gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -30,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Use Rack for a minimal, modular and adaptable interface for developing web applications in Ruby
+gem 'rack', '>= 2.0.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
