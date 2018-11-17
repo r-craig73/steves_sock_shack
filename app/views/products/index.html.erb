@@ -1,62 +1,77 @@
-<div class="container">
+<div class="container-fluid">
   <div class="jumbotron">
     <h1>Welcome to Steve's Sock Shack!</h1>
-    <h2>In 2015, Steve Grundy fullfilled his dream creating an online store where people can express thier feelings and creativity...through socks!</h2>
+    <h2>In 2015, Steve Grundy fulfilled his dream creating an online store where people can express their feelings and creativity...through socks!</h2>
     <h2>The more stylish and sillier the sock, the better!</h2>
     <h3>"If your sock game is wack, go to Steve's Sock Shack!"</h3>
   </div>
-</div>
 
-<h5>Admin: <%= link_to "Add a New Sock", new_product_path %></h5>
-<hr>
+  <h5>Admin: <%= link_to "Add a New Sock", new_product_path %></h5>
+  <hr>
 
-<% if @mostreviews.any? %>
-  <h3>Here's the TOP 10 reviewed socks! Check out the 'sock talk' in the links below! *</h3>
-  <% @mostreviews.each do |product| %>
-    <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
-  <% end %>
-<% else %>
-  <h4>The most reviewed socks are coming soon!</h4>
-<% end %>
-<h5>* per pair</h5>
-<hr>
-
-<% if @latestproducts != nil %>
-  <h3>Fresh from our warehouse! The latest socks available... *</h3>
-  <% @latestproducts.each do |product| %>
-    <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
-    <% end %>
-<% else %>
-    <h4>New socks are arriving soon!</h4>
-<% end %>
-<h5>* per pair</h5>
-<hr>
-
-<% if @usaproducts != nil %>
-<h3>Shop local! Here's a list of socks proudly made in the USA! *</h3>
-  <% @usaproducts.each do |product| %>
-    <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
-    <% end %>
-<% else %>
-    <h4>No USA products...yet</h4>
-<% end %>
-<h5>* per pair</h5>
-<hr>
-
-<% if @products != nil %>
-  <div class="container">
-  <h3>Here's a list of our available socks! *</h3>
-    <% @products.each_slice(4) do |products| %>
-    <div class="row">
-      <% products.each do |product| %>
-        <div class="col-md-3"><h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4></div>
+  <% if @mostreviews != nil %>
+    <h3>Here are the TOP 10 reviewed socks! Check out the 'Sock Talk' in the links below! *</h3>
+    <div class="container">
+      <% @mostreviews.each do |product| %>
+        <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %> - <%= product.reviews.count %> 'Sock Talk' Reviews</h4>
       <% end %>
     </div>
-    <% end %>
-  </div>
-<% else %>
-  <h2>No socks...yet</h2>
-<% end %>
-<h5>* per pair</h5>
-<hr>
-<p>If your sock game is wack, go to Steve's Sock Shack!</p>
+  <% else %>
+    <h4>The most reviewed socks are coming soon!</h4>
+  <% end %>
+  <h5>* per pair</h5>
+  <hr>
+
+  <% if @latestproducts != nil %>
+    <h3>Fresh from our warehouse! The latest socks available... *</h3>
+    <div class="container">
+        <% @latestproducts.each do |product| %>
+          <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
+        <% end %>
+    </div>
+  <% else %>
+    <h4>New socks are arriving soon!</h4>
+  <% end %>
+  <h5>* per pair</h5>
+  <hr>
+
+  <% if @usaproducts != nil %>
+    <h3>Shop local! Here's a list of socks proudly made in the USA! *</h3>
+    <div class="container">
+      <% @usaproducts.each_slice(3) do |products| %>
+        <div class="row">
+          <% products.each do |product| %>
+            <div class="col-md-4">
+              <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h4>No USA socks...yet</h4>
+  <% end %>
+  <h5>* per pair</h5>
+  <hr>
+
+  <% if @products != nil %>
+   <h3>Here's a list of our available socks! *</h3>
+    <div class="container">
+      <% @products.each_slice(4) do |products| %>
+        <div class="row">
+          <% products.each do |product| %>
+            <div class="col-md-3">
+              <h4><%= link_to product.name, product_path(product) %>: $ <%= product.cost %></h4>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h2>No socks...yet</h2>
+  <% end %>
+  <h5>* per pair</h5>
+  <hr>
+  
+  <p>If your sock game is wack, go to Steve's Sock Shack!</p>
+</div>
