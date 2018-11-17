@@ -7,8 +7,9 @@
 ## Description
 ### A project creating a website for Steve's Sock Shack.  The website uses Ruby on rails to handle products and customer's reviews.
 
-### Sample Home Page
-<kbd><img src="./app/assets/images/steve_sock_shack_homepage.png" alt="Steve's Sock Shack, partial screenshot"></kbd>
+### Sample Home Page (2 different screenshots)
+<kbd><img src="./app/assets/images/steve_sock_shack_home01.png" alt="Steve's Sock Shack, partial screenshot #1"></kbd>
+<kbd><img src="./app/assets/images/steve_sock_shack_home02.png" alt="Steve's Sock Shack, partial screenshot #2"></kbd>
 
 ### Application instructions (assuming Mac OS)
 * If you want to use Postgres for the database and not to install Rail's testing tools, create a file called `.railsrc` in your home directory (using the text editor of your choice) and add the line `-d postgresql -T`
