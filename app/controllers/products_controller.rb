@@ -22,7 +22,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    review_id = @product.review_id
     @reviews = @product.reviews
     render :display
   end
