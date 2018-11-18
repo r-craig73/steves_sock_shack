@@ -3,7 +3,7 @@ Review.destroy_all
 
 country_list = ['China', 'Japan', 'China', 'China', 'United States of America', 'China', 'China', 'United States of America', 'China', 'China', 'China', 'Japan', 'China', 'China', 'United States of America', 'China', 'China', 'United States of America', 'China', 'China', 'China', 'Japan', 'China', 'China', 'United States of America', 'China', 'China', 'United States of America', 'China', 'China', 'China', 'Japan', 'China', 'China', 'United States of America', 'China', 'China', 'United States of America', 'China', 'China', 'China', 'Japan', 'China', 'China', 'United States of America', 'China', 'China', 'United States of America', 'China', 'China']
 
-arrested_development_quotes = 'It is a hug, Michael. I am hugging you. I like being with you. Not tricks, Michael, illusions. There are so many poorly chosen words in that sentence. Did you enjoy your meal, Mom? You drank it fast enough. There is always money in the banana shack. I am a'
+arrested_development_quotes = 'It\'s a hug, Michael. I am hugging you. I like being with you. Not tricks, Michael, illusions. There are so many poorly chosen words in that sentence. Did you enjoy your meal, Mom? You drank it fast enough. There\'s always money in the banana shack.?'
 
 50.times do |i|
   @name = Faker::Color.color_name.capitalize + ' sock'
