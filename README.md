@@ -26,14 +26,16 @@
 
 * Database setup: Run `rake db:migrate db:test:prepare` to prepare the database and create the Active Record schema.rb file, respectively.
 
-* Rails server: Run `$ rails server` to start the Rails server.  Navigate to `http://localhost:3000`.  Refresh the page to reload any changes to the source files.
+* Starting postgres database system: Run `$ postgres` in a terminal window to start the database.
+
+* Rails server: Run `$ rails server` in a terminal window to start the Rails server.  Navigate to `http://localhost:3000`.  Refresh the page to reload any changes to the source files.
 
 * Integration testing: Use the Capybara gem
 
 ## Technologies Used
 ```
-Application: ruby-2.4.1, Bootstrap, HTML
-Testing: Rails 5.2.0, Rspec
+Application: ruby-2.4.1, Bootstrap, HTML, postgres, Rails 5.2.0
+Testing: Rspec
 Environment: gems
 ```
 
@@ -42,7 +44,7 @@ Environment: gems
 * Configuration
 
 
-Copyright (c) 2018 **_RC productions_**
+Copyright (c) 2019 **_RC productions_**
 
 ## MIT License
 -----------
