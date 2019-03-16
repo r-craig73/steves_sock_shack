@@ -10,7 +10,7 @@ describe "the review process" do
     fill_in 'Review', :with => 'xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx'
     select 4, from: 'Rating'
     click_on 'Add Review'
-    expect(page).to have_content 'Thank you for your review.'
+    expect(page).to have_content 'Thank you for the review.'
   end
 
   # it "reports an error when name is empty" do
