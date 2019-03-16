@@ -18,7 +18,7 @@
 
 * Run `$ gem install rails`
 
-* Verify that you are using ruby-2.4.1 in your terminal(s).
+* Verify that you are using ruby-2.4.3 in your terminal(s).
 
 * Run `$ bundle install` to install Ruby gems packages related to the Gemfile in the top level.
 
